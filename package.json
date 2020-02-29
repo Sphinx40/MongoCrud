@@ -2,10 +2,11 @@
   "name": "mongo",
   "version": "1.0.0",
   "scripts": {
-    "client": "cd client && yarn start",
+    "client": "npm start --prefix client",
     "server": "nodemon server.js",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "heroku-postbuild": "YARN_PRODUCTION=false cd client && yarn install && yarn run build "
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "start": "node server.js"
   },
   "main": "server.js",
   "license": "MIT",
@@ -16,5 +17,17 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.2",
     "nodemon": "^2.0.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sphinx40/MongoCrud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Sphinx40/MongoCrud/issues"
+  },
+  "homepage": "https://github.com/Sphinx40/MongoCrud#readme",
+  "description": ""
 }
